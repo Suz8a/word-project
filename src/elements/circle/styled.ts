@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colorPalette } from "../../theme";
 
 type ColorCircleProps = {
   width: string;
@@ -12,7 +11,7 @@ export const ColorCircle = styled.div<ColorCircleProps>`
     return "".concat(
       `width:${width};`,
       `height:${height};`,
-      color ? `color:${color};` : `color: ${colorPalette.primary};`
+      color ? `color:${color};` : `color: #000000;`
     );
   }}
   border-radius: 50%;

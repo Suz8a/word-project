@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colorPalette } from "../../theme";
 
 type TextContainerProps = {
   fontSize?: string;
@@ -11,7 +10,7 @@ export const TextContainer = styled.div<TextContainerProps>`
   ${({ fontSize, color }) => {
     return "".concat(
       fontSize ? `font-size:${fontSize};` : "font-size: 16px;",
-      color ? `color:${color};` : `color:${colorPalette.primary};`
+      color ? `color:${color};` : `color:#000000;`
     );
   }}
 `;
