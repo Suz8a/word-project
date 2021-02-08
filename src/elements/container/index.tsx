@@ -4,8 +4,13 @@ import { ItemsContainer } from "./styled";
 type ContainerProps = {
   width?: string;
   height?: string;
-  alignItems?: string;
-  justifyItems?: string;
+  alignItems?: "stretch" | "center" | "start" | "end";
+  justifyContent?:
+    | "start"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
   children: ReactNode;
 };
 
@@ -13,7 +18,7 @@ function Container({
   width,
   height,
   alignItems,
-  justifyItems,
+  justifyContent,
   children,
 }: ContainerProps) {
   return (
@@ -21,7 +26,7 @@ function Container({
       width={width}
       height={height}
       alignItems={alignItems}
-      justifyContent={justifyItems}
+      justifyContent={justifyContent}
     >
       {children}
     </ItemsContainer>

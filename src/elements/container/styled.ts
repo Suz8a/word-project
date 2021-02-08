@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-type ContainerProps = {
+type ItemsContainerProps = {
   width?: string;
   height?: string;
   alignItems?: string;
   justifyContent?: string;
 };
 
-export const Container = styled.div<ContainerProps>`
+export const ItemsContainer = styled.div<ItemsContainerProps>`
   ${({ width }) => (width ? `width:${width}` : `width: 100%`)}
   ${({ height }) => (height ? `height:${height}` : "")}
   ${({ alignItems }) => (alignItems ? `align-Items:${alignItems}` : ``)}
