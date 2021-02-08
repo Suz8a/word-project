@@ -8,7 +8,7 @@ type ContainerProps = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  border: 1 solid #d9d9d9;
+  border: 1px solid #d9d9d9;
   box-shadow: 0px 5px 20px 5px #b7b7b7;
   ${({ width, height, borderRadius, padding }) => {
     return "".concat(
