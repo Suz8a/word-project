@@ -45,14 +45,24 @@ type AnimationProps = {
   toggle?: boolean;
 };
 
-export const Container = styled.div`
+type ContainerProps = {
+  height: string;
+  width: string;
+  color?: string;
+};
+
+export const Container = styled.div<ContainerProps>`
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  ${({ height, width, color }) => {
+    return "".concat(
+      `height: ${height};`,
+      `width: ${width};`,
+      `background-color: ${color ? color : "black"};`
+    );
+  }}
   border: 5px solid black;
   overflow: hidden;
   position: relative;
-  background-color: red;
 `;
 
 export const Filler = styled.div<AnimationProps>`
