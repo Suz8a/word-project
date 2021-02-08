@@ -1,7 +1,9 @@
+import Timer from "../../elements/timer";
+
 function MenuPage() {
   return (
     <div>
-      <div>MenuPage page</div>
+      <Timer seconds={5} />
     </div>
   );
 }
