@@ -4,6 +4,7 @@ type ClickeableAreaProps = {
   width: string;
   height: string;
   backgroundColor?: string;
+  disabled?: boolean;
 };
 
 export const ClickeableArea = styled.div<ClickeableAreaProps>`
@@ -14,6 +15,8 @@ export const ClickeableArea = styled.div<ClickeableAreaProps>`
       `background-color: ${backgroundColor ? backgroundColor : "gray"};`
     );
   }}
+  ${({ disabled }) =>
+    disabled ? `pointer-events: none;filter: brightness(80%);` : ``}
   display: flex;
   align-items: center;
   justify-content: center;

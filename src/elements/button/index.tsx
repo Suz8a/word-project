@@ -7,11 +7,17 @@ type ButtonProps = {
   onClick: () => void;
   backgroundColor?: string;
   children?: ReactNode;
+  disabled?: boolean;
 };
 
-function Button({ width, height, children, onClick }: ButtonProps) {
+function Button({ width, height, children, disabled, onClick }: ButtonProps) {
   return (
-    <ClickeableArea width={width} height={height} onClick={onClick}>
+    <ClickeableArea
+      width={width}
+      height={height}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </ClickeableArea>
   );
