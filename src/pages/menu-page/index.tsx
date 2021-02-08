@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Note from "../../elements/note";
 import Timer from "../../elements/timer";
+import Button from "../../elements/button";
 
 function MenuPage() {
   const [reset, setReset] = useState(false);
@@ -18,8 +18,15 @@ function MenuPage() {
         width={"100px"}
         color={"blue"}
       />
-      <button onClick={() => changeFlag()}>Click me</button>
-      <Note width={"100px"} height={"100px"} />
+      <button onClick={() => changeFlag()}>Reset timer</button>
+
+      <Button
+        width={"150px"}
+        height={"50px"}
+        onClick={() => {
+          console.log("Button clicked");
+        }}
+      />
     </div>
   );
 }
