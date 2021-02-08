@@ -1,21 +1,39 @@
 import styled, { css, keyframes } from "styled-components";
 
 const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+`;
+
+const rotate1 = keyframes`
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(180deg);
   }
 `;
 
 const fill = keyframes`
+  from {
+    opacity: 1;
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+`;
+
+const fill1 = keyframes`
   0% {
     opacity: 1;
     transform: rotate(0deg)
   }
-
   100% {
     transform: rotate(180deg);
     opacity: 1;
@@ -24,6 +42,7 @@ const fill = keyframes`
 
 type AnimationProps = {
   seconds: number;
+  toggle?: boolean;
 };
 
 export const Container = styled.div`
@@ -33,23 +52,26 @@ export const Container = styled.div`
   border: 5px solid black;
   overflow: hidden;
   position: relative;
-  background-color: white;
+  background-color: red;
 `;
 
 export const Filler = styled.div<AnimationProps>`
   width: 50%;
   height: 100%;
-  background-color: red;
+  background-color: #ffffff;
   position: absolute;
   left: 0;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  border-right: none;
   transform-origin: right;
-  animation: ${({ seconds }) =>
-    css`
-      ${rotate} ${seconds}s linear forwards;
-    `};
+  animation: ${({ seconds, toggle }) =>
+    toggle
+      ? css`
+          ${rotate} ${seconds}s linear forwards;
+        `
+      : css`
+          ${rotate1} ${seconds}s linear forwards;
+        `};
 `;
 
 export const LeftMask = styled.div`
@@ -65,16 +87,21 @@ export const LeftMask = styled.div`
 export const RightMask = styled.div<AnimationProps>`
   width: 50%;
   height: 100%;
-  background-color: red;
+  background-color: #ffffff;
   position: absolute;
   right: 0;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   transform-origin: left;
-  animation: ${({ seconds }) =>
-    css`
-      ${fill} ${seconds}s linear forwards;
-    `};
+
+  animation: ${({ seconds, toggle }) =>
+    toggle
+      ? css`
+          ${fill} ${seconds}s linear forwards;
+        `
+      : css`
+          ${fill1} ${seconds}s linear forwards;
+        `};
   animation-delay: ${({ seconds }) =>
     css`
       ${seconds}s
