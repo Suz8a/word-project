@@ -5,6 +5,7 @@ type ItemsContainerProps = {
   height?: string;
   alignItems?: string;
   justifyContent?: string;
+  borderColor?: string;
 };
 
 export const ItemsContainer = styled.div<ItemsContainerProps>`
@@ -16,7 +17,8 @@ export const ItemsContainer = styled.div<ItemsContainerProps>`
       ? `justify-content:${justifyContent}`
       : `justify-content: center`}
   border-radius: 5px;
-  border: 1 solid #c4c4c4;
+  border: 1 solid
+    ${({ borderColor }) => (borderColor ? `${borderColor}` : `#C4C4C4`)};
   padding: 5px;
   display: flex;
 `;
