@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Note from "../../elements/note";
 import Timer from "../../elements/timer";
 
 function MenuPage() {
@@ -18,6 +19,7 @@ function MenuPage() {
         color={"blue"}
       />
       <button onClick={() => changeFlag()}>Click me</button>
+      <Note width={"100px"} height={"100px"} />
     </div>
   );
 }
