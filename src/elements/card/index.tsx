@@ -1,4 +1,4 @@
-import React, { Children, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Container } from "./styled";
 
 type CardProps = {
@@ -6,7 +6,7 @@ type CardProps = {
   height: string;
   borderRadius?: string;
   padding?: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 function Card({ width, height, borderRadius, children, padding }: CardProps) {
