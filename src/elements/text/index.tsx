@@ -5,11 +5,12 @@ type TextProps = {
   text: string;
   fontSize?: string;
   color?: string;
+  fontWeight?: string;
 };
 
-function Text({ text, fontSize, color }: TextProps) {
+function Text({ text, fontSize, color, fontWeight }: TextProps) {
   return (
-    <TextContainer fontSize={fontSize} color={color}>
+    <TextContainer fontSize={fontSize} color={color} fontWeight={fontWeight}>
       {text}
     </TextContainer>
   );

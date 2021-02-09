@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Timer from "../../elements/timer";
 import Button from "../../elements/button";
+import Panel from "../../components/panel";
 
 function MenuPage() {
   const [reset, setReset] = useState(false);
@@ -19,13 +20,11 @@ function MenuPage() {
         color={"blue"}
       />
       <button onClick={() => changeFlag()}>Reset timer</button>
-
-      <Button
-        width={"150px"}
-        height={"50px"}
-        onClick={() => {
-          console.log("Button clicked");
-        }}
+      <Panel
+        title={"Score"}
+        content={"contenido genial"}
+        titleColor={"red"}
+        contentColor={"blue"}
       />
     </div>
   );
