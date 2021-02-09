@@ -8,13 +8,20 @@ type PanelProps = {
   content: string;
   titleColor: string;
   contentColor: string;
+  containerHeight?: string;
 };
 
-function Panel({ title, content, titleColor, contentColor }: PanelProps) {
+function Panel({
+  title,
+  content,
+  titleColor,
+  contentColor,
+  containerHeight,
+}: PanelProps) {
   return (
     <PanelContainer>
       <Text text={title} color={titleColor} fontWeight="bold" />
-      <Container width="100%" height="20px">
+      <Container width="100%" height={containerHeight}>
         <Text text={content} color={contentColor} fontWeight="bold" />
       </Container>
     </PanelContainer>
