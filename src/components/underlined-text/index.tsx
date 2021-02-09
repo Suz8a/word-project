@@ -1,14 +1,15 @@
 import React from "react";
 import Text from "../../elements/text";
 import Line from "../../elements/line";
-import { TextLineContainer } from "./styled";
+import { TextContainer, TextLineContainer } from "./styled";
 
 type UnderlinedTextProps = {
   width: string;
   height: string;
   fontSize: string;
   textColor: string;
-  text: string;
+  text?: string;
+  selectable?: boolean;
 };
 
 function UnderlinedText({
@@ -17,15 +18,19 @@ function UnderlinedText({
   text,
   fontSize,
   textColor,
+  selectable,
 }: UnderlinedTextProps) {
   return (
     <TextLineContainer width={width} height={height}>
-      <Text
-        text={text}
-        fontSize={fontSize}
-        fontWeight="bold"
-        color={textColor}
-      />
+      <TextContainer>
+        <Text
+          text={text ? text : ""}
+          fontSize={fontSize}
+          fontWeight="bold"
+          color={textColor}
+          selectable={selectable}
+        />
+      </TextContainer>
       <Line width={"100%"} />
     </TextLineContainer>
   );

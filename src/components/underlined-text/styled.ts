@@ -12,6 +12,10 @@ export const TextLineContainer = styled.div<TextLineContainerProps>`
   justify-content: center;
   flex-direction: column;
   gap: 3px;
-  background-color: red;
   padding: 10px;
+`;
+
+export const TextContainer = styled.div`
+  height: 90%;
+  width: 100%;
 `;

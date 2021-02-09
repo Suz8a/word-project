@@ -15,7 +15,7 @@ export const TextContainer = styled.div<TextContainerProps>`
       `font-size:${fontSize ? fontSize : `16pxpx`};`,
       `color:${color ? color : `black`};`,
       `font-weight:${fontWeight ? fontWeight : `normal`};`,
-      `user-select:${selectable ? `none` : `auto`};`
+      `user-select:${!selectable ? `none` : `auto`};`
     );
   }}
 `;

@@ -25,8 +25,9 @@ function MenuPage() {
         width="100px"
         height="100px"
         fontSize="40px"
-        textColor="red"
+        textColor="transparent"
         text=""
+        selectable={false}
       />
     </div>
   );
