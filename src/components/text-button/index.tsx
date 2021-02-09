@@ -1,10 +1,9 @@
 import React from "react";
 import Button from "../../elements/button";
 import Card from "../../elements/card";
-import Line from "../../elements/line";
 import Text from "../../elements/text";
 
-type LetterButtonProps = {
+type TextButtonProps = {
   size: string;
   letter: string;
   backgroundColor: string;
@@ -14,7 +13,7 @@ type LetterButtonProps = {
   onClick: () => void;
 };
 
-function LetterButton({
+function TextButton({
   size,
   letter,
   backgroundColor,
@@ -22,7 +21,7 @@ function LetterButton({
   fontSize,
   disabled,
   onClick,
-}: LetterButtonProps) {
+}: TextButtonProps) {
   return (
     <Card width={size} height={size} padding="0px" borderRadius="10px">
       <Button
@@ -44,4 +43,4 @@ function LetterButton({
   );
 }
 
-export default LetterButton;
+export default TextButton;

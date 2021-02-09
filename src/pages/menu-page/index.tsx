@@ -2,7 +2,7 @@ import { useState } from "react";
 import Timer from "../../elements/timer";
 import NotificationButton from "../../components/notification-button";
 import { HiLightBulb } from "react-icons/hi";
-import LetterButton from "../../components/letter-button";
+import TextButton from "../../components/text-button";
 function MenuPage() {
   const [reset, setReset] = useState(false);
 
@@ -20,7 +20,7 @@ function MenuPage() {
         color={"blue"}
       />
       <button onClick={() => changeFlag()}>Reset timer</button>
-      <LetterButton
+      <TextButton
         size="100px"
         letter="A"
         backgroundColor="white"
