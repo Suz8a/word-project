@@ -5,14 +5,18 @@ type ClickableAreaProps = {
   height: string;
   backgroundColor?: string;
   disabled?: boolean;
+  flexDirection?: string;
+  padding?: string;
 };
 
 export const ClickableArea = styled.div<ClickableAreaProps>`
-  ${({ width, height, backgroundColor }) => {
+  ${({ width, height, backgroundColor, flexDirection, padding }) => {
     return "".concat(
-      ` width: ${width};`,
+      `width: ${width};`,
       `height: ${height};`,
-      `background-color: ${backgroundColor ? backgroundColor : "gray"};`
+      `background-color: ${backgroundColor ? backgroundColor : "lightblue"};`,
+      `flex-direction: ${flexDirection ? flexDirection : "row"};`,
+      `padding: ${padding ? padding : "10px"};`
     );
   }}
   ${({ disabled }) =>

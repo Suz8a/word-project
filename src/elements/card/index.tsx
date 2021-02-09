@@ -9,6 +9,14 @@ type CardProps = {
   children?: ReactNode;
   backgroundColor?: string;
   className?: string;
+  alignItems?: "stretch" | "center" | "start" | "end";
+  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
+  justifyContent?:
+    | "start"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
 };
 
 function Card({
@@ -19,6 +27,7 @@ function Card({
   padding,
   backgroundColor,
   className,
+  flexDirection,
 }: CardProps) {
   return (
     <Container
@@ -28,6 +37,7 @@ function Card({
       borderRadius={borderRadius}
       padding={padding}
       backgroundColor={backgroundColor}
+      flexDirection={flexDirection}
     >
       {children}
     </Container>

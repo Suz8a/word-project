@@ -9,6 +9,8 @@ type ButtonProps = {
   children?: ReactNode;
   disabled?: boolean;
   className?: string;
+  padding?: string;
+  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
 };
 
 function Button({
@@ -18,6 +20,8 @@ function Button({
   disabled,
   className,
   backgroundColor,
+  flexDirection,
+  padding,
   onClick,
 }: ButtonProps) {
   return (
@@ -27,7 +31,9 @@ function Button({
       height={height}
       onClick={onClick}
       disabled={disabled}
+      flexDirection={flexDirection}
       backgroundColor={backgroundColor}
+      padding={padding}
     >
       {children}
     </ClickableArea>

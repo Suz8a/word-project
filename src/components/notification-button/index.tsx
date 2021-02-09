@@ -11,6 +11,7 @@ type NotificationButtonProps = {
   textColor: string;
   text: string;
   children: ReactNode;
+  fontSize: string;
   disabled?: boolean;
   onClick: () => void;
 };
@@ -23,10 +24,11 @@ function NotificationButton({
   disabled,
   text,
   children,
+  fontSize,
   onClick,
 }: NotificationButtonProps) {
   return (
-    <Card width={size} height={size} padding="0px">
+    <Card width={size} height={size} padding="0px" borderRadius="10px">
       <Button
         disabled={disabled}
         backgroundColor={backgroundColor}
@@ -36,7 +38,12 @@ function NotificationButton({
       >
         {children}
         <StyledCircle size="40%" backgroundColor={circleColor}>
-          <Text text={text} fontWeight="bold" color={textColor} />
+          <Text
+            text={text}
+            fontSize={fontSize}
+            fontWeight="bold"
+            color={textColor}
+          />
         </StyledCircle>
       </Button>
     </Card>
