@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Timer from "../../elements/timer";
 import NotificationButton from "../../components/notification-button";
-
+import { HiLightBulb } from "react-icons/hi";
 function MenuPage() {
   const [reset, setReset] = useState(false);
 
@@ -23,11 +23,12 @@ function MenuPage() {
         size="100px"
         text="10"
         backgroundColor="white"
-        iconColor="blue"
         circleColor="blue"
         textColor="white"
         onClick={() => {}}
-      />
+      >
+        <HiLightBulb color="red" size="100%" />
+      </NotificationButton>
     </div>
   );
 }
