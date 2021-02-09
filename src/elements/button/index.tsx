@@ -17,6 +17,7 @@ function Button({
   children,
   disabled,
   className,
+  backgroundColor,
   onClick,
 }: ButtonProps) {
   return (
@@ -26,6 +27,7 @@ function Button({
       height={height}
       onClick={onClick}
       disabled={disabled}
+      backgroundColor={backgroundColor}
     >
       {children}
     </ClickableArea>
