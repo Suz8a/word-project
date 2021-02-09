@@ -2,10 +2,17 @@ import React from "react";
 import Note from "../../elements/note";
 import Text from "../../elements/text";
 
-function TextNote() {
+type TextNoteProps = {
+  width: string;
+  height: string;
+  text: string;
+  textColor?: string;
+};
+
+function TextNote({ width, height, text, textColor }: TextNoteProps) {
   return (
-    <Note width="100px" height="50px">
-      <Text text="holi" />
+    <Note width={width} height={height}>
+      <Text text={`"${text}"`} color={textColor} fontWeight="bold" />
     </Note>
   );
 }
