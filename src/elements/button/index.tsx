@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ClickeableArea } from "./styled";
+import { ClickableArea } from "./styled";
 
 type ButtonProps = {
   width: string;
@@ -8,18 +8,27 @@ type ButtonProps = {
   backgroundColor?: string;
   children?: ReactNode;
   disabled?: boolean;
+  className?: string;
 };
 
-function Button({ width, height, children, disabled, onClick }: ButtonProps) {
+function Button({
+  width,
+  height,
+  children,
+  disabled,
+  className,
+  onClick,
+}: ButtonProps) {
   return (
-    <ClickeableArea
+    <ClickableArea
+      className={className}
       width={width}
       height={height}
       onClick={onClick}
       disabled={disabled}
     >
       {children}
-    </ClickeableArea>
+    </ClickableArea>
   );
 }
 

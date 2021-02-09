@@ -6,11 +6,17 @@ type CircleProps = {
   height: string;
   color?: string;
   children?: ReactNode;
+  className?: string;
 };
 
-function Circle({ width, height, color, children }: CircleProps) {
+function Circle({ width, height, color, children, className }: CircleProps) {
   return (
-    <ColorCircle width={width} height={height} color={color}>
+    <ColorCircle
+      className={className}
+      width={width}
+      height={height}
+      color={color}
+    >
       {children}
     </ColorCircle>
   );

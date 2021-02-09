@@ -5,10 +5,18 @@ type LineProps = {
   width: string;
   height?: string;
   color?: string;
+  className?: string;
 };
 
-function Line({ width, height, color }: LineProps) {
-  return <CustomLine width={width} height={height} color={color} />;
+function Line({ width, height, color, className }: LineProps) {
+  return (
+    <CustomLine
+      className={className}
+      width={width}
+      height={height}
+      color={color}
+    />
+  );
 }
 
 export default Line;

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-type ClickeableAreaProps = {
+type ClickableAreaProps = {
   width: string;
   height: string;
   backgroundColor?: string;
   disabled?: boolean;
 };
 
-export const ClickeableArea = styled.div<ClickeableAreaProps>`
+export const ClickableArea = styled.div<ClickableAreaProps>`
   ${({ width, height, backgroundColor }) => {
     return "".concat(
       ` width: ${width};`,

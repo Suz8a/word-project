@@ -6,11 +6,17 @@ type TextProps = {
   fontSize?: string;
   color?: string;
   fontWeight?: string;
+  className?: string;
 };
 
-function Text({ text, fontSize, color, fontWeight }: TextProps) {
+function Text({ text, fontSize, color, fontWeight, className }: TextProps) {
   return (
-    <TextContainer fontSize={fontSize} color={color} fontWeight={fontWeight}>
+    <TextContainer
+      className={className}
+      fontSize={fontSize}
+      color={color}
+      fontWeight={fontWeight}
+    >
       {text}
     </TextContainer>
   );

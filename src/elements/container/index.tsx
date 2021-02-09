@@ -5,6 +5,7 @@ type ContainerProps = {
   width?: string;
   height?: string;
   borderColor?: string;
+  className?: string;
   alignItems?: "stretch" | "center" | "start" | "end";
   justifyContent?:
     | "start"
@@ -22,9 +23,11 @@ function Container({
   justifyContent,
   children,
   borderColor,
+  className,
 }: ContainerProps) {
   return (
     <ItemsContainer
+      className={className}
       width={width}
       height={height}
       alignItems={alignItems}
