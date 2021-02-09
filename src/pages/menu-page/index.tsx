@@ -21,8 +21,9 @@ function MenuPage() {
       />
       <button onClick={() => changeFlag()}>Reset timer</button>
       <TextButton
-        size="100px"
-        letter="A"
+        width="100px"
+        height="100px"
+        text="A"
         backgroundColor="white"
         fontSize="100px"
         onClick={() => {}}

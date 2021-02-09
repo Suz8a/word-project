@@ -4,26 +4,28 @@ import Card from "../../elements/card";
 import Text from "../../elements/text";
 
 type TextButtonProps = {
-  size: string;
-  letter: string;
+  width: string;
+  height: string;
+  text: string;
   backgroundColor: string;
-  letterColor?: string;
+  textColor?: string;
   disabled?: boolean;
   fontSize?: string;
   onClick: () => void;
 };
 
 function TextButton({
-  size,
-  letter,
+  width,
+  height,
+  text,
   backgroundColor,
-  letterColor,
+  textColor,
   fontSize,
   disabled,
   onClick,
 }: TextButtonProps) {
   return (
-    <Card width={size} height={size} padding="0px" borderRadius="10px">
+    <Card width={width} height={height} padding="0px" borderRadius="10px">
       <Button
         disabled={disabled}
         backgroundColor={backgroundColor}
@@ -33,10 +35,10 @@ function TextButton({
         onClick={onClick}
       >
         <Text
-          text={letter}
+          text={text}
           fontSize={fontSize}
           fontWeight="bold"
-          color={letterColor}
+          color={textColor}
         />
       </Button>
     </Card>
