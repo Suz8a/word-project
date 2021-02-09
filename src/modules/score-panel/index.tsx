@@ -7,9 +7,17 @@ type ScorePanelProps = {
   score: string;
   words: string;
   letters: string;
+  titleSize?: string;
+  contentSize?: string;
 };
 
-function ScorePanel({ score, words, letters }: ScorePanelProps) {
+function ScorePanel({
+  score,
+  words,
+  letters,
+  titleSize,
+  contentSize,
+}: ScorePanelProps) {
   return (
     <Card width="100%" height="100%" flexDirection="column" padding="20px;">
       <Panel
@@ -17,6 +25,8 @@ function ScorePanel({ score, words, letters }: ScorePanelProps) {
         content={score}
         titleColor={colorPalette.primary}
         contentColor={colorPalette.secondary}
+        titleSize={titleSize}
+        contentSize={contentSize}
       />
       <Panel
         title="Words"

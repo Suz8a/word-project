@@ -6,7 +6,7 @@ import { TextContainer, TextLineContainer } from "./styled";
 type UnderlinedTextProps = {
   width: string;
   height: string;
-  fontSize: string;
+  fontSize?: string;
   textColor: string;
   text?: string;
   selectable?: boolean;
