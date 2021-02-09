@@ -21,6 +21,7 @@ function MenuPage() {
       <button onClick={() => changeFlag()}>Reset timer</button>
       <NotificationButton
         size="100px"
+        text="10"
         backgroundColor="white"
         iconColor="blue"
         circleColor="blue"

@@ -11,6 +11,7 @@ type NotificationButtonProps = {
   iconColor: string;
   circleColor: string;
   textColor: string;
+  text: string;
   disabled?: boolean;
   onClick: () => void;
 };
@@ -22,6 +23,7 @@ function NotificationButton({
   circleColor,
   textColor,
   disabled,
+  text,
   onClick,
 }: NotificationButtonProps) {
   return (
@@ -35,7 +37,7 @@ function NotificationButton({
       >
         <HiLightBulb color={iconColor} size="100%" />
         <StyledCircle size="40%" backgroundColor={circleColor}>
-          <Text text="0" fontWeight="bold" color={textColor} />
+          <Text text={text} fontWeight="bold" color={textColor} />
         </StyledCircle>
       </Button>
     </Card>
