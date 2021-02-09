@@ -11,8 +11,8 @@ export const CustomLine = styled.div<CustomLineProps>`
   ${({ width, height, color }) => {
     return "".concat(
       `width:${width};`,
-      height ? `height:${height};` : `height: 8px;`,
-      color ? `background-color:${color};` : `background-color: #000000;`
+      `height:${height ? height : `8px`};`,
+      `background-color:${color ? color : `black`};`
     );
   }}
 `;

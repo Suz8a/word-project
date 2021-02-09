@@ -11,7 +11,7 @@ export const ColorCircle = styled.div<ColorCircleProps>`
     return "".concat(
       `width:${width};`,
       `height:${height};`,
-      color ? `color:${color};` : `color: #000000;`
+      `color:${color ? color : `black`};`
     );
   }}
   border-radius: 50%;

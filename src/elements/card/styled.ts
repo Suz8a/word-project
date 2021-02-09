@@ -15,9 +15,9 @@ export const Container = styled.div<ContainerProps>`
     return "".concat(
       `width:${width};`,
       `height:${height};`,
-      `background-color:${backgroundColor ? backgroundColor : `f000000`}`,
-      borderRadius ? `border-radius:${borderRadius};` : `border-radius: 30px;`,
-      padding ? `padding:${padding};` : `padding: 10px;`
+      `background-color:${backgroundColor ? backgroundColor : `white`};`,
+      `border-radius:${borderRadius ? borderRadius : `30px`};`,
+      `padding:${padding ? padding : `10px`};`
     );
   }}
 `;

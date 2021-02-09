@@ -11,8 +11,8 @@ export const TextContainer = styled.div<TextContainerProps>`
 
   ${({ fontSize, color, fontWeight }) => {
     return "".concat(
-      fontSize ? `font-size:${fontSize};` : "font-size: 16px;",
-      color ? `color:${color};` : `color:#000000;`,
+      `font-size:${fontSize ? fontSize : `16pxpx`};`,
+      `color:${color ? color : `black`};`,
       `font-weight:${fontWeight ? fontWeight : `normal`};`
     );
   }}

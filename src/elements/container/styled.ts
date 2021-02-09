@@ -11,12 +11,10 @@ type ItemsContainerProps = {
 export const ItemsContainer = styled.div<ItemsContainerProps>`
   ${({ width, height, alignItems, justifyContent }) => {
     return "".concat(
-      width ? `width:${width};` : `width: 100%;`,
-      height ? `height:${height};` : ``,
-      alignItems ? `align-Items:${alignItems};` : ``,
-      justifyContent
-        ? `justify-content:${justifyContent};`
-        : `justify-content: center;`
+      `width:${width ? width : `100%`};`,
+      `height:${height ? height : ``};`,
+      `align-Items:${alignItems ? alignItems : ``};`,
+      `justify-content:${justifyContent ? justifyContent : `center`};`
     );
   }}
   border-radius: 5px;
