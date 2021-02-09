@@ -11,6 +11,7 @@ type ContainerProps = {
 export const Container = styled.div<ContainerProps>`
   border: 1px solid #d9d9d9;
   box-shadow: 0px 5px 20px 5px #b7b7b7;
+  position: relative;
   ${({ width, height, borderRadius, padding, backgroundColor }) => {
     return "".concat(
       `width:${width};`,

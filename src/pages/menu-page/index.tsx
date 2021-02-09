@@ -19,7 +19,14 @@ function MenuPage() {
         color={"blue"}
       />
       <button onClick={() => changeFlag()}>Reset timer</button>
-      <NotificationButton />
+      <NotificationButton
+        size="100px"
+        backgroundColor="white"
+        iconColor="blue"
+        circleColor="blue"
+        textColor="white"
+        onClick={() => {}}
+      />
     </div>
   );
 }

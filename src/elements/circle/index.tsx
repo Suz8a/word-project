@@ -2,21 +2,15 @@ import React, { ReactNode } from "react";
 import { ColorCircle } from "./styled";
 
 type CircleProps = {
-  width: string;
-  height: string;
+  size: string;
   color?: string;
   children?: ReactNode;
   className?: string;
 };
 
-function Circle({ width, height, color, children, className }: CircleProps) {
+function Circle({ size, color, children, className }: CircleProps) {
   return (
-    <ColorCircle
-      className={className}
-      width={width}
-      height={height}
-      color={color}
-    >
+    <ColorCircle className={className} width={size} height={size} color={color}>
       {children}
     </ColorCircle>
   );

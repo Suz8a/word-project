@@ -13,9 +13,9 @@ type PanelProps = {
 function Panel({ title, content, titleColor, contentColor }: PanelProps) {
   return (
     <PanelContainer>
-      <Text text={title} color={titleColor} fontWeight={"bold"} />
-      <Container width={"100%"} height={"20px"}>
-        <Text text={content} color={contentColor} fontWeight={"bold"} />
+      <Text text={title} color={titleColor} fontWeight="bold" />
+      <Container width="100%" height="20px">
+        <Text text={content} color={contentColor} fontWeight="bold" />
       </Container>
     </PanelContainer>
   );
