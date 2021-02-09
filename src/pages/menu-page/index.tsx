@@ -3,6 +3,7 @@ import Timer from "../../elements/timer";
 import NotificationButton from "../../components/notification-button";
 import { HiLightBulb } from "react-icons/hi";
 import TextButton from "../../components/text-button";
+import UnderlinedText from "../../components/underlined-text";
 function MenuPage() {
   const [reset, setReset] = useState(false);
 
@@ -20,13 +21,12 @@ function MenuPage() {
         color={"blue"}
       />
       <button onClick={() => changeFlag()}>Reset timer</button>
-      <TextButton
+      <UnderlinedText
         width="100px"
         height="100px"
-        text="A"
-        backgroundColor="white"
-        fontSize="100px"
-        onClick={() => {}}
+        fontSize="40px"
+        textColor="red"
+        text=""
       />
     </div>
   );

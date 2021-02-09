@@ -1,12 +1,33 @@
 import React from "react";
 import Text from "../../elements/text";
 import Line from "../../elements/line";
+import { TextLineContainer } from "./styled";
 
-function UnderlinedText() {
+type UnderlinedTextProps = {
+  width: string;
+  height: string;
+  fontSize: string;
+  textColor: string;
+  text: string;
+};
+
+function UnderlinedText({
+  width,
+  height,
+  text,
+  fontSize,
+  textColor,
+}: UnderlinedTextProps) {
   return (
-    <div>
-      <div></div>
-    </div>
+    <TextLineContainer width={width} height={height}>
+      <Text
+        text={text}
+        fontSize={fontSize}
+        fontWeight="bold"
+        color={textColor}
+      />
+      <Line width={"100%"} />
+    </TextLineContainer>
   );
 }
 
