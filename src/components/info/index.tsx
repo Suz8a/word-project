@@ -1,7 +1,6 @@
 import React from "react";
 import { InfoContainer } from "./styled";
 import Text from "../../elements/text";
-import { title } from "process";
 
 type InfoProps = {
   width: string;
