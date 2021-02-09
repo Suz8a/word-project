@@ -39,7 +39,6 @@ function LetterButton({
           fontWeight="bold"
           color={letterColor}
         />
-        <Line width="100%" />
       </Button>
     </Card>
   );
