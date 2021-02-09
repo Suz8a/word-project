@@ -7,6 +7,9 @@ function MenuPage() {
     <div>
       <TopBar
         height="40px"
+        onClick={() => {
+          console.log("icon clicked");
+        }}
         icon={
           <ImArrowLeft size="20px" color="white">
             holi

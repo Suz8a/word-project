@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Button from "../../elements/button";
 import { StyledText, TopBarContainer } from "./styled";
 
 type TopBarProps = {
@@ -6,6 +7,7 @@ type TopBarProps = {
   icon: ReactNode;
   text: string;
   backgroundColor: string;
+  onClick: () => void;
   textColor?: string;
   fontSize?: string;
 };
@@ -17,10 +19,19 @@ function TopBar({
   fontSize,
   textColor,
   backgroundColor,
+  onClick,
 }: TopBarProps) {
   return (
     <TopBarContainer height={height} backgroundColor={backgroundColor}>
-      {icon}
+      <Button
+        height="auto"
+        onClick={onClick}
+        width="fit-content"
+        backgroundColor="inherit"
+      >
+        {icon}
+      </Button>
+
       <StyledText
         text={text}
         fontSize={fontSize}
