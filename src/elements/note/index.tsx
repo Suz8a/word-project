@@ -1,15 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { NoteContainer, NoteArea, Border } from "./styled";
 
 type NoteProps = {
   width: string;
   height: string;
+  children?: ReactNode;
 };
 
-function Note({ width, height }: NoteProps) {
+function Note({ width, height, children }: NoteProps) {
   return (
     <NoteContainer width={width} height={height}>
-      <NoteArea></NoteArea>
+      <NoteArea>{children}</NoteArea>
       <Border />
     </NoteContainer>
   );

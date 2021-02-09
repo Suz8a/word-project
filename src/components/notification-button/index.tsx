@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import Card from "../../elements/card";
-import { HiLightBulb } from "react-icons/hi";
 import Button from "../../elements/button";
 import Text from "../../elements/text";
 import { StyledCircle } from "./styled";
