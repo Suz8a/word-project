@@ -1,41 +1,15 @@
-import Keyboard from "../../modules/key-board";
+import Panel from "../../components/panel";
 
 function MenuPage() {
-  var letters = [
-    "A",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-  ];
-
   return (
     <div>
-      <Keyboard
-        width="350px"
-        height="230px"
-        letters={letters}
-        buttonSize="57px"
-        fontSize="30px"
+      <Panel
+        title="test"
+        content="holi"
+        contentColor="red"
+        titleColor="green"
+        flexDirection="row"
+        titleSize="25px"
       />
     </div>
   );
