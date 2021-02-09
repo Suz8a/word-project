@@ -1,23 +1,41 @@
-import ScorePanel from "../../modules/score-panel";
-import TopBar from "../../components/top-bar";
-import { ImArrowLeft } from "react-icons/im";
+import Keyboard from "../../modules/key-board";
 
 function MenuPage() {
+  var letters = [
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+  ];
+
   return (
     <div>
-      <TopBar
-        height="40px"
-        onClick={() => {
-          console.log("icon clicked");
-        }}
-        icon={
-          <ImArrowLeft size="20px" color="white">
-            holi
-          </ImArrowLeft>
-        }
-        text="Level 1"
-        textColor="white"
-        backgroundColor="black"
+      <Keyboard
+        width="350px"
+        height="230px"
+        letters={letters}
+        buttonSize="57px"
+        fontSize="30px"
       />
     </div>
   );
