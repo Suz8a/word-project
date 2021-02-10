@@ -55,3 +55,10 @@ export const resetTime = () => {
     type: "RESET_TIME",
   };
 };
+
+//TIMER
+export const setTimer = () => {
+  return {
+    type: "SET_TIMER",
+  };
+};

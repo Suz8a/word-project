@@ -51,6 +51,7 @@ export const storeReducer = (
         lettersKeyboard: addLetters(wordLetters),
         currentDescription: action.payload.currentDescription,
       };
+
     case "LETTER_GUESSED":
       const newCurrentWordSplitted = [...state.currentWordSplitted];
       const newLettersKeyboardColor = [...state.lettersKeyboard];
@@ -72,6 +73,7 @@ export const storeReducer = (
         letters: state.letters + 1,
         score: state.score + 5,
       };
+
     case "LETTER_GUESSED_FAILED":
       const disabledLetterKeyboard = [...state.lettersKeyboard];
       disabledLetterKeyboard[action.payload.index] = {
@@ -83,6 +85,7 @@ export const storeReducer = (
         lettersKeyboard: disabledLetterKeyboard,
         attemps: state.attemps - 1,
       };
+
     case "REDUCE_CLUES":
       const newLettersKeyboard = [...state.lettersKeyboard];
       const clueIndex = getClueIndex(
@@ -98,6 +101,7 @@ export const storeReducer = (
         clues: state.clues - 1,
         lettersKeyboard: newLettersKeyboard,
       };
+
     case "REDUCE_SKIPS":
       return {
         ...state,
@@ -109,6 +113,7 @@ export const storeReducer = (
         lettersKeyboard: addLetters(action.payload.currentWord.split("")),
         currentDescription: action.payload.currentDescription,
       };
+
     case "RESET_TIME":
       return {
         ...state,

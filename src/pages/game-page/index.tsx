@@ -49,6 +49,12 @@ function GamePage() {
   }, []);
 
   const toggle = false;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log("This will run every second!");
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   function onClueClick() {
     dispatch(reduceClues());
@@ -71,6 +77,7 @@ function GamePage() {
   }
 
   if (loading) return <div>loading...</div>;
+  if (attemps === 0) return <div>Game over</div>;
 
   return (
     <>
