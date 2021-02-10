@@ -1,4 +1,3 @@
-import { colorPalette } from "../../theme";
 import { addLetters, getClueIndex } from "../../utils";
 
 export type GameState = {
@@ -20,6 +19,7 @@ export type GameState = {
     fontColor: string;
   }[];
   currentDescription: string;
+  toggle: boolean;
 };
 
 const initialState: GameState = {
@@ -36,6 +36,7 @@ const initialState: GameState = {
   currentWordSplitted: [],
   lettersKeyboard: [],
   currentDescription: "",
+  toggle: false,
 };
 
 export const storeReducer = (
@@ -52,12 +53,6 @@ export const storeReducer = (
         currentWordSplitted: wordLetters.map(() => undefined),
         lettersKeyboard: addLetters(wordLetters),
         currentDescription: action.payload.currentDescription,
-      };
-
-    case "SET_TIMER":
-      return {
-        ...state,
-        timer: action.payload.time,
       };
 
     case "REDUCE_TIMER":
@@ -100,6 +95,21 @@ export const storeReducer = (
         attemps: state.attemps - 1,
       };
 
+    case "WORD_GUESSED":
+      return {
+        ...state,
+        score: state.score + 20,
+        words: state.words + 1,
+        timer: action.payload.timer,
+        toggle: action.payload.toggle,
+        currentWord: action.payload.currentWord,
+        currentWordSplitted: action.payload.currentWord
+          .split("")
+          .map(() => undefined),
+        lettersKeyboard: addLetters(action.payload.currentWord.split("")),
+        currentDescription: action.payload.currentDescription,
+      };
+
     case "REDUCE_CLUES":
       const newLettersKeyboard = [...state.lettersKeyboard];
       const clueIndex = getClueIndex(
@@ -128,11 +138,17 @@ export const storeReducer = (
         currentDescription: action.payload.currentDescription,
       };
 
-    case "RESET_TIME":
+    case "CHANGE_WORD":
       return {
         ...state,
-        time: 300,
+        currentWord: action.payload.currentWord,
+        currentWordSplitted: action.payload.currentWord
+          .split("")
+          .map(() => undefined),
+        lettersKeyboard: addLetters(action.payload.currentWord.split("")),
+        currentDescription: action.payload.currentDescription,
       };
+
     default:
       return state;
   }

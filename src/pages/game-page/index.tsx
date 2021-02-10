@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { colorPalette } from "../../theme";
 import { HiLightBulb } from "react-icons/hi";
 import { ImShuffle } from "react-icons/im";
-import { ImArrowLeft } from "react-icons/im";
 import Info from "../../components/info";
 import Game from "../../layouts/game";
 import Timer from "../../elements/timer";
@@ -22,6 +21,7 @@ import {
   reduceClues,
   reduceSkips,
   reduceTimer,
+  wordGuessed,
 } from "../../store/actions";
 import { GameState } from "../../store/reducers";
 import { getAllIndex } from "../../utils";
@@ -42,6 +42,7 @@ function GamePage() {
     skips,
     words,
     timer,
+    toggle,
   } = useSelector<GameState, GameState>((state) => state);
 
   useEffect(() => {
@@ -50,7 +51,18 @@ function GamePage() {
     );
   }, []);
 
-  const toggle = false;
+  useEffect(() => {
+    console.log(currentWordSplitted);
+    if (
+      currentWordSplitted.every((currentValue) => currentValue !== undefined) &&
+      !loading
+    ) {
+      getWord().then(({ definition, word }) =>
+        dispatch(wordGuessed(300, !toggle, word, definition))
+      );
+    }
+  }, [currentWordSplitted, loading, toggle]);
+
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(reduceTimer());
@@ -79,7 +91,7 @@ function GamePage() {
   }
 
   if (loading) return <div>loading...</div>;
-  if (attemps === 0 || timer === 0) return <div>Game over</div>;
+  if (attemps === 0 || timer < 0) return <div>Game over</div>;
 
   return (
     <>
@@ -88,7 +100,7 @@ function GamePage() {
           <TopBar
             backgroundColor={colorPalette.primary}
             height="100%"
-            icon={<ImArrowLeft size="40px" color="white" />}
+            icon={<div />}
             text={`Guess the word`}
             fontSize="40px"
             textColor="white"

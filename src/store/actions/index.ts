@@ -42,6 +42,23 @@ export const letterGuessedFailed = (index: number) => {
   };
 };
 
+export const wordGuessed = (
+  timer: number,
+  toggle: boolean,
+  currentWord: string,
+  currentDescription: string
+) => {
+  return {
+    type: "WORD_GUESSED",
+    payload: {
+      timer,
+      toggle,
+      currentWord,
+      currentDescription,
+    },
+  };
+};
+
 //CLUES ACTIONS
 export const reduceClues = () => {
   return {
@@ -50,12 +67,6 @@ export const reduceClues = () => {
 };
 
 //TIMER
-export const setTimer = (time: number) => {
-  return {
-    type: "SET_TIMER",
-    payload: { time },
-  };
-};
 export const reduceTimer = () => {
   return {
     type: "REDUCE_TIMER",
