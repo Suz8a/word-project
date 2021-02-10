@@ -19,7 +19,13 @@ function ScorePanel({
   contentSize,
 }: ScorePanelProps) {
   return (
-    <Card width="100%" height="100%" flexDirection="column" padding="20px;">
+    <Card
+      width="100%"
+      height="100%"
+      flexDirection="column"
+      justifyContent="start"
+      padding="20px;"
+    >
       <Panel
         title="Score"
         content={score}
@@ -33,12 +39,16 @@ function ScorePanel({
         content={words}
         titleColor={colorPalette.primary}
         contentColor={colorPalette.secondary}
+        titleSize={titleSize}
+        contentSize={contentSize}
       />
       <Panel
         title="Letters"
         content={letters}
         titleColor={colorPalette.primary}
         contentColor={colorPalette.secondary}
+        titleSize={titleSize}
+        contentSize={contentSize}
       />
     </Card>
   );

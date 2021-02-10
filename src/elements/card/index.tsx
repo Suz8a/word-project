@@ -28,9 +28,13 @@ function Card({
   backgroundColor,
   className,
   flexDirection,
+  alignItems,
+  justifyContent,
 }: CardProps) {
   return (
     <Container
+      alignItems={alignItems}
+      justifyContent={justifyContent}
       className={className}
       width={width}
       height={height}

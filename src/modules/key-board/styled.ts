@@ -10,6 +10,6 @@ export const KeyboardContainer = styled.div<KeyboardContainerProps>`
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;

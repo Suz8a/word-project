@@ -31,7 +31,7 @@ function UnderlinedText({
           selectable={selectable}
         />
       </TextContainer>
-      <Line width={"100%"} />
+      <Line width={"100%"} color="black" />
     </TextLineContainer>
   );
 }

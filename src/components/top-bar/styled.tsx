@@ -12,7 +12,7 @@ export const TopBarContainer = styled.div<TopBarContainerProps>`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 10px 30px;
 `;
 
 export const StyledText = styled(Text)`

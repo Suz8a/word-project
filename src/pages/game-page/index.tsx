@@ -15,17 +15,41 @@ import TopBar from "../../components/top-bar";
 import UnderlinedLetters from "../../modules/underlined-letters";
 
 function GamePage() {
-  var attemptsLeft = 0;
+  var attemptsLeft = 10;
   var time = 100;
   var timeLeft = 30;
   var toggle = false;
   var cluesLeft = 10;
   var nextLeft = 10;
-  var letters = ["A", "B", "C"];
+  var letters = [
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+  ];
   var wordDescription = "something";
-  var score = 0;
-  var words = 0;
-  var lettersCounter = 0;
+  var score = 10;
+  var words = 10;
+  var lettersCounter = 10;
   var level = 1;
   var word = ["H", "O", "L", "I"];
 
@@ -40,17 +64,18 @@ function GamePage() {
           <TopBar
             backgroundColor={colorPalette.primary}
             height="100%"
-            icon={<ImArrowLeft size="100%" color="white" />}
+            icon={<ImArrowLeft size="40px" color="white" />}
             text={`Level ${level}`}
-            fontSize="30px"
+            fontSize="40px"
+            textColor="white"
             onClick={onExitClick}
           />
         }
         word={
           <UnderlinedLetters
-            height="auto"
+            height="100%"
             width="100%"
-            letterBoxSize="30px"
+            letterBoxSize="50px"
             letters={word}
             textColor={colorPalette.primary}
           />
@@ -61,13 +86,13 @@ function GamePage() {
             titleColor={colorPalette.primary}
             info={attemptsLeft.toString()}
             infoColor={colorPalette.secondary}
-            width="100%"
+            width="fit-content"
           />
         }
         clock={
           <Timer
             seconds={time}
-            size={"100%"}
+            size={"150px"}
             color={colorPalette.primary}
             toggle={toggle}
           />
@@ -78,7 +103,7 @@ function GamePage() {
             titleColor={colorPalette.primary}
             info={timeLeft.toString()}
             infoColor={colorPalette.secondary}
-            width="100%"
+            width="fit-content"
           />
         }
         clueButton={
@@ -86,7 +111,7 @@ function GamePage() {
             backgroundColor="white"
             circleColor={colorPalette.primary}
             fontSize="100%"
-            size="100%"
+            size="150px"
             text={cluesLeft.toString()}
             textColor="white"
             disabled={cluesLeft === 0}
@@ -100,7 +125,7 @@ function GamePage() {
             backgroundColor="white"
             circleColor={colorPalette.primary}
             fontSize="100%"
-            size="100%"
+            size="150px"
             text={nextLeft.toString()}
             textColor="white"
             disabled={nextLeft === 0}
@@ -111,7 +136,7 @@ function GamePage() {
         }
         keyboard={
           <Keyboard
-            buttonSize="30px"
+            buttonSize="60px"
             height="100%"
             width="100%"
             letters={letters}

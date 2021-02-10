@@ -13,9 +13,10 @@ type ContainerProps = {
 
 export const Container = styled.div<ContainerProps>`
   border: 1px solid #d9d9d9;
-  box-shadow: 0px 5px 20px 5px #b7b7b7;
+  box-shadow: 0px 5px 10px 0px #c3c3c3;
   position: relative;
   display: flex;
+
   ${({
     width,
     height,
@@ -32,7 +33,7 @@ export const Container = styled.div<ContainerProps>`
       `background-color:${backgroundColor ? backgroundColor : `white`};`,
       `border-radius:${borderRadius ? borderRadius : `30px`};`,
       `padding:${padding ? padding : `10px`};`,
-      `align-Items:${alignItems ? alignItems : ``};`,
+      `align-items:${alignItems ? alignItems : ``};`,
       `justify-content:${justifyContent ? justifyContent : `center`};`,
       `flex-direction:${flexDirection ? flexDirection : `column`};`
     );

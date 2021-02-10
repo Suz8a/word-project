@@ -11,4 +11,5 @@ export const UnderlinedLettersContainer = styled.div<UnderlinedLettersContainerP
   justify-content: center;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 `;

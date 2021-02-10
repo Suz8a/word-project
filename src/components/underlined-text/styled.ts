@@ -18,4 +18,6 @@ export const TextLineContainer = styled.div<TextLineContainerProps>`
 export const TextContainer = styled.div`
   height: 90%;
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
