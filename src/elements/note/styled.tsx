@@ -9,7 +9,6 @@ export const NoteContainer = styled.div<ContainerProps>`
   ${({ width, height }) => {
     return "".concat(` width: ${width};`, `height: ${height};`);
   }}
-
   position: relative;
 `;
 
@@ -22,6 +21,8 @@ export const NoteArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 10px;
 `;
 
 export const Border = styled.div`

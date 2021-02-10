@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { colorPalette } from "../../theme";
 import { HiLightBulb } from "react-icons/hi";
 import { ImShuffle } from "react-icons/im";
@@ -13,49 +13,45 @@ import ScorePanel from "../../modules/score-panel";
 import Panel from "../../components/panel";
 import TopBar from "../../components/top-bar";
 import UnderlinedLetters from "../../modules/underlined-letters";
+import { getWord } from "../../api";
+import { useDispatch, useSelector } from "react-redux";
+import { initGame } from "../../store/actions";
+import { GameState } from "../../store/reducers";
+import { addLetters } from "../../utils";
 
 function GamePage() {
-  var attemptsLeft = 10;
-  var time = 100;
-  var timeLeft = 30;
-  var toggle = false;
-  var cluesLeft = 10;
-  var nextLeft = 10;
-  var letters = [
-    "A",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-    "B",
-    "C",
-  ];
-  var wordDescription = "something";
-  var score = 10;
-  var words = 10;
-  var lettersCounter = 10;
-  var level = 1;
-  var word = ["H", "O", "L", "I"];
+  const dispatch = useDispatch();
+  const {
+    attemps,
+    time,
+    letters,
+    clues,
+    currentDescription,
+    currentWord,
+    lettersKeyboard,
+    currentWordSplitted,
+    loading,
+    score,
+    skips,
+    words,
+  } = useSelector<GameState, GameState>((state) => state);
+
+  useEffect(() => {
+    getWord().then(({ definition, word }) =>
+      dispatch(initGame(word, definition))
+    );
+  }, []);
+
+  console.log(addLetters(["x", "z"]));
+
+  const toggle = false;
+  const letterKeyboard = ["a", "b", "c"];
 
   function onClueClick() {}
   function onNextClick() {}
   function onExitClick() {}
+
+  if (loading) return <div>loading...</div>;
 
   return (
     <>
@@ -65,7 +61,7 @@ function GamePage() {
             backgroundColor={colorPalette.primary}
             height="100%"
             icon={<ImArrowLeft size="40px" color="white" />}
-            text={`Level ${level}`}
+            text={`Guess the word`}
             fontSize="40px"
             textColor="white"
             onClick={onExitClick}
@@ -75,8 +71,9 @@ function GamePage() {
           <UnderlinedLetters
             height="100%"
             width="100%"
-            letterBoxSize="50px"
-            letters={word}
+            letterBoxSize="60px"
+            fontSize="25px"
+            letters={currentWordSplitted}
             textColor={colorPalette.primary}
           />
         }
@@ -84,9 +81,10 @@ function GamePage() {
           <Info
             infoTitle="Attempts left:"
             titleColor={colorPalette.primary}
-            info={attemptsLeft.toString()}
+            info={attemps.toString()}
             infoColor={colorPalette.secondary}
             width="fit-content"
+            fontSize="30px"
           />
         }
         clock={
@@ -99,9 +97,9 @@ function GamePage() {
         }
         timer={
           <Info
-            infoTitle="Time left:"
+            infoTitle="Time left"
             titleColor={colorPalette.primary}
-            info={timeLeft.toString()}
+            info={""}
             infoColor={colorPalette.secondary}
             width="fit-content"
           />
@@ -112,9 +110,9 @@ function GamePage() {
             circleColor={colorPalette.primary}
             fontSize="30px"
             size="150px"
-            text={cluesLeft.toString()}
+            text={clues.toString()}
             textColor="white"
-            disabled={cluesLeft === 0}
+            disabled={clues === 0}
             onClick={onClueClick}
           >
             <HiLightBulb size="100%" color={colorPalette.primary} />
@@ -126,9 +124,9 @@ function GamePage() {
             circleColor={colorPalette.primary}
             fontSize="30px"
             size="150px"
-            text={nextLeft.toString()}
+            text={skips.toString()}
             textColor="white"
-            disabled={nextLeft === 0}
+            disabled={skips === 0}
             onClick={onNextClick}
           >
             <ImShuffle size="100%" color={colorPalette.primary} />
@@ -139,7 +137,7 @@ function GamePage() {
             buttonSize="60px"
             height="100%"
             width="100%"
-            letters={letters}
+            letters={lettersKeyboard}
             fontSize="20px"
           />
         }
@@ -147,7 +145,7 @@ function GamePage() {
           <TextNote
             height="100%"
             width="100%"
-            text={wordDescription}
+            text={currentDescription}
             fontSize="30px"
           />
         }
@@ -155,7 +153,7 @@ function GamePage() {
           <ScorePanel
             score={score.toString()}
             words={words.toString()}
-            letters={lettersCounter.toString()}
+            letters={letters.toString()}
             titleSize="30px"
             contentSize="25px"
           />
@@ -185,7 +183,7 @@ function GamePage() {
         letters={
           <Panel
             title="Letters"
-            content={lettersCounter.toString()}
+            content={letters.toString()}
             titleColor={colorPalette.primary}
             contentColor={colorPalette.secondary}
             flexDirection="row"

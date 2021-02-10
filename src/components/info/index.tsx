@@ -27,7 +27,12 @@ function Info({
         fontSize={fontSize}
         fontWeight="bold"
       />
-      <Text text={info} color={infoColor} fontWeight="bold" />
+      <Text
+        text={info}
+        color={infoColor}
+        fontWeight="bold"
+        fontSize={fontSize}
+      />
     </InfoContainer>
   );
 }

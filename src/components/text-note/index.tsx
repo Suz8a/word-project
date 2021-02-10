@@ -14,7 +14,7 @@ function TextNote({ width, height, text, textColor, fontSize }: TextNoteProps) {
   return (
     <Note width={width} height={height}>
       <Text
-        text={`"${text}"`}
+        text={`"${text.trim()}"`}
         color={textColor}
         fontWeight="bold"
         fontSize={fontSize}

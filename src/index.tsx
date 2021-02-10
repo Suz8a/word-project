@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
-import allReducers from "./store/reducers";
 import { Provider } from "react-redux";
+import { storeReducer } from "./store/reducers";
 
 const store = createStore(
-  allReducers,
+  storeReducer,
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
     (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 );
