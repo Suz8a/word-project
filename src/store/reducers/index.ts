@@ -72,6 +72,17 @@ export const storeReducer = (
         letters: state.letters + 1,
         score: state.score + 5,
       };
+    case "LETTER_GUESSED_FAILED":
+      const disabledLetterKeyboard = [...state.lettersKeyboard];
+      disabledLetterKeyboard[action.payload.index] = {
+        ...disabledLetterKeyboard[action.payload.index],
+        disabled: true,
+      };
+      return {
+        ...state,
+        lettersKeyboard: disabledLetterKeyboard,
+        attemps: state.attemps - 1,
+      };
     case "REDUCE_CLUES":
       const newLettersKeyboard = [...state.lettersKeyboard];
       const clueIndex = getClueIndex(

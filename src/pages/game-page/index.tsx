@@ -67,7 +67,7 @@ function GamePage() {
 
     currentWord.includes(letterSelected)
       ? dispatch(letterGuessed(indexs, letterSelected))
-      : dispatch(letterGuessedFailed(indexs, letterSelected));
+      : dispatch(letterGuessedFailed(index));
   }
 
   if (loading) return <div>loading...</div>;
