@@ -110,7 +110,7 @@ function GamePage() {
           <NotificationButton
             backgroundColor="white"
             circleColor={colorPalette.primary}
-            fontSize="100%"
+            fontSize="30px"
             size="150px"
             text={cluesLeft.toString()}
             textColor="white"
@@ -124,7 +124,7 @@ function GamePage() {
           <NotificationButton
             backgroundColor="white"
             circleColor={colorPalette.primary}
-            fontSize="100%"
+            fontSize="30px"
             size="150px"
             text={nextLeft.toString()}
             textColor="white"
@@ -144,7 +144,12 @@ function GamePage() {
           />
         }
         noteDescription={
-          <TextNote height="100%" width="100%" text={wordDescription} />
+          <TextNote
+            height="100%"
+            width="100%"
+            text={wordDescription}
+            fontSize="30px"
+          />
         }
         leftBar={
           <ScorePanel

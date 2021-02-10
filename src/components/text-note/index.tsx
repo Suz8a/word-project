@@ -7,12 +7,18 @@ type TextNoteProps = {
   height: string;
   text: string;
   textColor?: string;
+  fontSize?: string;
 };
 
-function TextNote({ width, height, text, textColor }: TextNoteProps) {
+function TextNote({ width, height, text, textColor, fontSize }: TextNoteProps) {
   return (
     <Note width={width} height={height}>
-      <Text text={`"${text}"`} color={textColor} fontWeight="bold" />
+      <Text
+        text={`"${text}"`}
+        color={textColor}
+        fontWeight="bold"
+        fontSize={fontSize}
+      />
     </Note>
   );
 }
