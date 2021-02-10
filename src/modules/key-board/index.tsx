@@ -5,9 +5,10 @@ import { KeyboardContainer } from "./styled";
 type KeyboardProps = {
   width: string;
   height: string;
-  letters: string[];
+  letters: { value: string; disabled: boolean }[];
   buttonSize: string;
   fontSize?: string;
+  onClick: (letterIndex: number) => void;
 };
 
 function Keyboard({
@@ -16,6 +17,7 @@ function Keyboard({
   letters,
   buttonSize,
   fontSize,
+  onClick,
 }: KeyboardProps) {
   return (
     <KeyboardContainer height={height} width={width}>
@@ -25,9 +27,12 @@ function Keyboard({
           backgroundColor="white"
           height={buttonSize}
           width={buttonSize}
-          text={letter}
+          text={letter.value}
+          disabled={letter.disabled}
           fontSize={fontSize}
-          onClick={() => {}}
+          onClick={() => {
+            onClick(index);
+          }}
         />
       ))}
     </KeyboardContainer>
