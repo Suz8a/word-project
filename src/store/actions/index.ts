@@ -23,11 +23,24 @@ export const reduceSkips = (
 };
 
 //SCORE ACTIONS
-export const letterGuessed = (index: number) => {
+export const letterGuessed = (indexes: number[], letter: string) => {
+  console.log(indexes);
+  console.log(letter);
   return {
     type: "LETTER_GUESSED",
     payload: {
+      indexes,
+      letter,
+    },
+  };
+};
+
+export const letterGuessedFailed = (index: number[], letter: string) => {
+  return {
+    type: "LETTER_GUESSED_FAILED",
+    payload: {
       index,
+      letter,
     },
   };
 };

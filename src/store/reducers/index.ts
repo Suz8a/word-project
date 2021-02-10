@@ -1,5 +1,5 @@
+import { colorPalette } from "../../theme";
 import { addLetters, getClueIndex } from "../../utils";
-import { letterGuessed } from "../actions";
 
 export type GameState = {
   time: number;
@@ -7,12 +7,17 @@ export type GameState = {
   skips: number;
   score: number;
   words: number;
-  letters: 0;
+  letters: number;
   attemps: number;
   loading: boolean;
   currentWord: string;
   currentWordSplitted: string[];
-  lettersKeyboard: { value: string; color: string; disabled: boolean }[];
+  lettersKeyboard: {
+    value: string;
+    color: string;
+    disabled: boolean;
+    fontColor: string;
+  }[];
   currentDescription: string;
 };
 
@@ -46,6 +51,27 @@ export const storeReducer = (
         lettersKeyboard: addLetters(wordLetters),
         currentDescription: action.payload.currentDescription,
       };
+    case "LETTER_GUESSED":
+      const newCurrentWordSplitted = [...state.currentWordSplitted];
+      const newLettersKeyboardColor = [...state.lettersKeyboard];
+      action.payload.indexes.forEach((index: number) => {
+        newCurrentWordSplitted[index] = action.payload.letter;
+      });
+      newLettersKeyboardColor.forEach((item, index) => {
+        if (item.value === action.payload.letter)
+          newLettersKeyboardColor[index] = {
+            ...item,
+            disabled: true,
+            color: "#00B8FD",
+          };
+      });
+      return {
+        ...state,
+        currentWordSplitted: newCurrentWordSplitted,
+        lettersKeyboard: newLettersKeyboardColor,
+        letters: state.letters + 1,
+        score: state.score + 5,
+      };
     case "REDUCE_CLUES":
       const newLettersKeyboard = [...state.lettersKeyboard];
       const clueIndex = getClueIndex(
@@ -71,6 +97,11 @@ export const storeReducer = (
           .map(() => undefined),
         lettersKeyboard: addLetters(action.payload.currentWord.split("")),
         currentDescription: action.payload.currentDescription,
+      };
+    case "RESET_TIME":
+      return {
+        ...state,
+        time: 300,
       };
     default:
       return state;

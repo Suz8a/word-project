@@ -17,6 +17,8 @@ type ResponseType = {
 
 export async function getWord() {
   const response = await axios.request<ResponseType[]>(options);
+
+  response.data[0].word = response.data[0].word.toLowerCase();
   console.log(response.data[0]);
   return response.data[0];
 }

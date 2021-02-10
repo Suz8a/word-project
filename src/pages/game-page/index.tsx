@@ -15,9 +15,15 @@ import TopBar from "../../components/top-bar";
 import UnderlinedLetters from "../../modules/underlined-letters";
 import { getWord } from "../../api";
 import { useDispatch, useSelector } from "react-redux";
-import { initGame, reduceClues, reduceSkips } from "../../store/actions";
+import {
+  initGame,
+  letterGuessed,
+  letterGuessedFailed,
+  reduceClues,
+  reduceSkips,
+} from "../../store/actions";
 import { GameState } from "../../store/reducers";
-import { addLetters } from "../../utils";
+import { getAllIndex } from "../../utils";
 
 function GamePage() {
   const dispatch = useDispatch();
@@ -42,8 +48,6 @@ function GamePage() {
     );
   }, []);
 
-  console.log(addLetters(["x", "z"]));
-
   const toggle = false;
 
   function onClueClick() {
@@ -55,7 +59,16 @@ function GamePage() {
     );
   }
   function onExitClick() {}
-  function onKeyboardLetterClicked() {}
+  function onKeyboardLetterClicked(index: number) {
+    const letterSelected = lettersKeyboard[index].value;
+    const currentWordSplitted = currentWord.split("");
+    const indexs = getAllIndex(currentWordSplitted, letterSelected);
+    console.log(indexs);
+
+    currentWord.includes(letterSelected)
+      ? dispatch(letterGuessed(indexs, letterSelected))
+      : dispatch(letterGuessedFailed(indexs, letterSelected));
+  }
 
   if (loading) return <div>loading...</div>;
 

@@ -1,3 +1,5 @@
+import { colorPalette } from "../theme";
+
 const alphabet = [
   "a",
   "b",
@@ -37,11 +39,11 @@ export const addLetters = (wordLetters: string[]) => {
   for (let i = 0; i < lettersLeft; i++) {
     newLetters.push(getRandomItem(wordLetters, alphabet).randomItem);
   }
-  console.log(newLetters);
   return shuffle([...newLetters, ...wordLetters]).map((letter) => ({
     value: letter,
     color: "white",
     disabled: false,
+    fontColor: colorPalette.primary,
   }));
 };
 
@@ -59,7 +61,12 @@ export const getRandomItem = (
 };
 
 export const getClueIndex = (
-  letters: { value: string; disabled: boolean; color: string }[],
+  letters: {
+    value: string;
+    disabled: boolean;
+    color: string;
+    fontColor: string;
+  }[],
   wordLetters: string[]
 ): number => {
   return getRandomItem(
@@ -70,4 +77,12 @@ export const getClueIndex = (
 
 export const shuffle = (array: any[]) => {
   return array.sort(() => Math.random() - 0.5);
+};
+
+export const getAllIndex = (array: string[], letter: string) => {
+  return array
+    .map((item, index) => {
+      if (item === letter) return index;
+    })
+    .filter((item) => item !== undefined) as number[];
 };

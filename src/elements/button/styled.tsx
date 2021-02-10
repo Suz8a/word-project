@@ -31,6 +31,6 @@ export const ClickableArea = styled.div<ClickableAreaProps>`
     cursor: pointer;
   }
   &:active {
-    filter: brightness(80%);
+    filter: brightness(90%);
   }
 `;
