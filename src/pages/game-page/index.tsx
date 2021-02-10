@@ -15,7 +15,7 @@ import TopBar from "../../components/top-bar";
 import UnderlinedLetters from "../../modules/underlined-letters";
 import { getWord } from "../../api";
 import { useDispatch, useSelector } from "react-redux";
-import { initGame } from "../../store/actions";
+import { initGame, reduceClues, reduceSkips } from "../../store/actions";
 import { GameState } from "../../store/reducers";
 import { addLetters } from "../../utils";
 
@@ -45,11 +45,17 @@ function GamePage() {
   console.log(addLetters(["x", "z"]));
 
   const toggle = false;
-  const letterKeyboard = ["a", "b", "c"];
 
-  function onClueClick() {}
-  function onNextClick() {}
+  function onClueClick() {
+    dispatch(reduceClues());
+  }
+  function onSkipClick() {
+    getWord().then(({ definition, word }) =>
+      dispatch(reduceSkips(word, definition))
+    );
+  }
   function onExitClick() {}
+  function onKeyboardLetterClicked() {}
 
   if (loading) return <div>loading...</div>;
 
@@ -127,18 +133,19 @@ function GamePage() {
             text={skips.toString()}
             textColor="white"
             disabled={skips === 0}
-            onClick={onNextClick}
+            onClick={onSkipClick}
           >
             <ImShuffle size="100%" color={colorPalette.primary} />
           </NotificationButton>
         }
         keyboard={
           <Keyboard
-            buttonSize="60px"
+            buttonSize="50px"
             height="100%"
             width="100%"
             letters={lettersKeyboard}
             fontSize="20px"
+            onClick={onKeyboardLetterClicked}
           />
         }
         noteDescription={

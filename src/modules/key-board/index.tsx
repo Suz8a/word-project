@@ -5,7 +5,7 @@ import { KeyboardContainer } from "./styled";
 type KeyboardProps = {
   width: string;
   height: string;
-  letters: { value: string; disabled: boolean }[];
+  letters: { value: string; disabled: boolean; color: string }[];
   buttonSize: string;
   fontSize?: string;
   onClick: (letterIndex: number) => void;
@@ -24,7 +24,7 @@ function Keyboard({
       {letters.map((letter, index) => (
         <TextButton
           key={index}
-          backgroundColor="white"
+          backgroundColor={letter.color}
           height={buttonSize}
           width={buttonSize}
           text={letter.value}
