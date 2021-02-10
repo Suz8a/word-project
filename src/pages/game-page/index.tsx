@@ -21,6 +21,7 @@ import {
   letterGuessedFailed,
   reduceClues,
   reduceSkips,
+  reduceTimer,
 } from "../../store/actions";
 import { GameState } from "../../store/reducers";
 import { getAllIndex } from "../../utils";
@@ -40,6 +41,7 @@ function GamePage() {
     score,
     skips,
     words,
+    timer,
   } = useSelector<GameState, GameState>((state) => state);
 
   useEffect(() => {
@@ -51,7 +53,7 @@ function GamePage() {
   const toggle = false;
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("This will run every second!");
+      dispatch(reduceTimer());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -77,7 +79,7 @@ function GamePage() {
   }
 
   if (loading) return <div>loading...</div>;
-  if (attemps === 0) return <div>Game over</div>;
+  if (attemps === 0 || timer === 0) return <div>Game over</div>;
 
   return (
     <>
@@ -123,9 +125,9 @@ function GamePage() {
         }
         timer={
           <Info
-            infoTitle="Time left"
+            infoTitle="Time left:"
             titleColor={colorPalette.primary}
-            info={""}
+            info={`${timer} seconds`}
             infoColor={colorPalette.secondary}
             width="fit-content"
           />

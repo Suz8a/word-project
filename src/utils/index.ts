@@ -33,7 +33,7 @@ export const convertMinutesToSeconds = (minutes: number) => {
 };
 
 export const addLetters = (wordLetters: string[]) => {
-  var lettersLeft = 24 - wordLetters.length;
+  var lettersLeft = 30 - wordLetters.length;
   var newLetters: string[] = [];
 
   for (let i = 0; i < lettersLeft; i++) {
@@ -76,7 +76,9 @@ export const getClueIndex = (
 };
 
 export const shuffle = (array: any[]) => {
-  return array.sort(() => Math.random() - 0.5);
+  return array
+    .sort(() => Math.random() - 0.5)
+    .filter((item, index) => array.indexOf(item) === index);
 };
 
 export const getAllIndex = (array: string[], letter: string) => {

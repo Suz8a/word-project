@@ -3,6 +3,7 @@ import { addLetters, getClueIndex } from "../../utils";
 
 export type GameState = {
   time: number;
+  timer: number;
   clues: number;
   skips: number;
   score: number;
@@ -28,6 +29,7 @@ const initialState: GameState = {
   score: 0,
   skips: 5,
   time: 300,
+  timer: 300,
   words: 0,
   loading: true,
   currentWord: "",
@@ -50,6 +52,18 @@ export const storeReducer = (
         currentWordSplitted: wordLetters.map(() => undefined),
         lettersKeyboard: addLetters(wordLetters),
         currentDescription: action.payload.currentDescription,
+      };
+
+    case "SET_TIMER":
+      return {
+        ...state,
+        timer: action.payload.time,
+      };
+
+    case "REDUCE_TIMER":
+      return {
+        ...state,
+        timer: state.timer - 1,
       };
 
     case "LETTER_GUESSED":

@@ -49,16 +49,15 @@ export const reduceClues = () => {
   };
 };
 
-//TIME
-export const resetTime = () => {
-  return {
-    type: "RESET_TIME",
-  };
-};
-
 //TIMER
-export const setTimer = () => {
+export const setTimer = (time: number) => {
   return {
     type: "SET_TIMER",
+    payload: { time },
+  };
+};
+export const reduceTimer = () => {
+  return {
+    type: "REDUCE_TIMER",
   };
 };
