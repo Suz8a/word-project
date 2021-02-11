@@ -38,4 +38,7 @@ export const Container = styled.div<ContainerProps>`
       `flex-direction:${flexDirection ? flexDirection : `column`};`
     );
   }}
+  @media (max-width: 900px) {
+    flex-direction: row;
+  }
 `;

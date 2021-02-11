@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Card from "../../elements/card";
 import Circle from "../../elements/circle";
 
 type StyledCircleProps = {
@@ -10,4 +11,11 @@ export const StyledCircle = styled(Circle)<StyledCircleProps>`
   position: absolute;
   top: -15%;
   right: -15%;
+`;
+
+export const StyledCard = styled(Card)`
+  @media (max-width: 900px) {
+    height: 50px;
+    width: 50px;
+  }
 `;

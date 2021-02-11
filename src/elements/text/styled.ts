@@ -18,4 +18,7 @@ export const TextContainer = styled.div<TextContainerProps>`
       `user-select:${!selectable ? `none` : `auto`};`
     );
   }}
+  @media (max-width: 900px) {
+    font-size: 20px;
+  }
 `;

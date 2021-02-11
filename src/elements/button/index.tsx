@@ -10,6 +10,7 @@ type ButtonProps = {
   disabled?: boolean;
   className?: string;
   padding?: string;
+  borderRadius?: string;
   flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
 };
 
@@ -22,6 +23,7 @@ function Button({
   backgroundColor,
   flexDirection,
   padding,
+  borderRadius,
   onClick,
 }: ButtonProps) {
   return (
@@ -34,6 +36,7 @@ function Button({
       flexDirection={flexDirection}
       backgroundColor={backgroundColor}
       padding={padding}
+      borderRadius={borderRadius}
     >
       {children}
     </ClickableArea>

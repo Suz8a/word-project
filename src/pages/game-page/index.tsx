@@ -25,6 +25,10 @@ import {
 } from "../../store/actions";
 import { GameState } from "../../store/reducers";
 import { getAllIndex } from "../../utils";
+import loadingAnimation from "../../assets/7773-loading.json";
+import Lottie from "lottie-react";
+import SimpleContainer from "../../components/simple-container";
+import Text from "../../elements/text";
 
 function GamePage() {
   const dispatch = useDispatch();
@@ -49,7 +53,7 @@ function GamePage() {
     getWord().then(({ definition, word }) =>
       dispatch(initGame(word, definition))
     );
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     console.log(currentWordSplitted);
@@ -61,14 +65,14 @@ function GamePage() {
         dispatch(wordGuessed(300, !toggle, word, definition))
       );
     }
-  }, [currentWordSplitted, loading, toggle]);
+  }, [currentWordSplitted, loading, toggle, dispatch]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(reduceTimer());
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [dispatch]);
 
   function onClueClick() {
     dispatch(reduceClues());
@@ -90,12 +94,39 @@ function GamePage() {
       : dispatch(letterGuessedFailed(index));
   }
 
-  if (loading) return <div>loading...</div>;
-  if (attemps === 0 || timer < 0) return <div>Game over</div>;
+  if (loading)
+    return (
+      <SimpleContainer width="100%" height="100vh">
+        <Lottie animationData={loadingAnimation} />
+      </SimpleContainer>
+    );
+  if (attemps === 0 || timer < 0)
+    return (
+      <SimpleContainer width="100%" height="100vh">
+        <Text
+          text="Game Over"
+          color={colorPalette.primary}
+          fontWeight="bold"
+          fontSize="80px"
+        />
+        <Text
+          text="(Reload page to play again)"
+          color={colorPalette.secondary}
+          fontWeight="bold"
+          fontSize="30px"
+        />
+      </SimpleContainer>
+    );
 
   return (
     <>
       <Game
+        loadingLottie={
+          <SimpleContainer width="100%" height="100%">
+            <Lottie animationData={loadingAnimation} />
+          </SimpleContainer>
+        }
+        loading={loading}
         topBar={
           <TopBar
             backgroundColor={colorPalette.primary}
@@ -137,7 +168,7 @@ function GamePage() {
         }
         timer={
           <Info
-            infoTitle="Time left:"
+            infoTitle=""
             titleColor={colorPalette.primary}
             info={`${timer} seconds`}
             infoColor={colorPalette.secondary}

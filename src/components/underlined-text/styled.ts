@@ -13,6 +13,10 @@ export const TextLineContainer = styled.div<TextLineContainerProps>`
   flex-direction: column;
   gap: 3px;
   padding: 10px;
+  @media (max-width: 900px) {
+    height: 40px;
+    width: 30px;
+  }
 `;
 
 export const TextContainer = styled.div`

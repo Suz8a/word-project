@@ -22,4 +22,7 @@ export const ItemsContainer = styled.div<ItemsContainerProps>`
     ${({ borderColor }) => (borderColor ? `${borderColor}` : `#C4C4C4`)};
   padding: 5px;
   display: flex;
+  @media (max-width: 900px) {
+    height: auto;
+  }
 `;

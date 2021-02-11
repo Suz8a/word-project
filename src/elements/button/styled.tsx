@@ -7,16 +7,25 @@ type ClickableAreaProps = {
   disabled?: boolean;
   flexDirection?: string;
   padding?: string;
+  borderRadius?: string;
 };
 
 export const ClickableArea = styled.div<ClickableAreaProps>`
-  ${({ width, height, backgroundColor, flexDirection, padding }) => {
+  ${({
+    width,
+    height,
+    backgroundColor,
+    flexDirection,
+    padding,
+    borderRadius,
+  }) => {
     return "".concat(
       `width: ${width};`,
       `height: ${height};`,
       `background-color: ${backgroundColor ? backgroundColor : "lightblue"};`,
       `flex-direction: ${flexDirection ? flexDirection : "row"};`,
-      `padding: ${padding ? padding : "10px"};`
+      `padding: ${padding ? padding : "10px"};`,
+      `border-radius:${borderRadius ? borderRadius : ""};`
     );
   }}
   ${({ disabled }) =>
@@ -32,5 +41,8 @@ export const ClickableArea = styled.div<ClickableAreaProps>`
   }
   &:active {
     filter: brightness(90%);
+  }
+  @media (max-width: 900px) {
+    border-radius: 5px;
   }
 `;

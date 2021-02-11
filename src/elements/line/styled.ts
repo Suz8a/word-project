@@ -15,4 +15,7 @@ export const CustomLine = styled.div<CustomLineProps>`
       `background-color:${color ? color : `black`};`
     );
   }}
+  @media (max-width: 900px) {
+    height: 3px;
+  }
 `;
