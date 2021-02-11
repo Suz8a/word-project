@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
-import Card from "../../elements/card";
 import Button from "../../elements/button";
 import Text from "../../elements/text";
-import { StyledCircle } from "./styled";
+import { StyledCard, StyledCircle } from "./styled";
 
 type NotificationButtonProps = {
   size: string;
@@ -28,7 +27,7 @@ function NotificationButton({
   onClick,
 }: NotificationButtonProps) {
   return (
-    <Card width={size} height={size} padding="0px" borderRadius="10px">
+    <StyledCard width={size} height={size} padding="0px" borderRadius="10px">
       <Button
         disabled={disabled}
         backgroundColor={backgroundColor}
@@ -46,7 +45,7 @@ function NotificationButton({
           />
         </StyledCircle>
       </Button>
-    </Card>
+    </StyledCard>
   );
 }
 

@@ -60,6 +60,10 @@ export const Container = styled.div<ContainerProps>`
       `background-color: ${color ? color : "black"};`
     );
   }}
+  @media (max-width: 900px) {
+    height: 50px;
+    width: 50px;
+  }
   border: 5px solid black;
   overflow: hidden;
   position: relative;

@@ -17,6 +17,7 @@ export const GameContainer = styled.div`
   padding: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const GameGrid = styled.div`
