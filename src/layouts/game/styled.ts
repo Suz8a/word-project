@@ -21,6 +21,9 @@ export const GameContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {
+    padding: 10px;
+  }
 `;
 
 export const GameGrid = styled.div`
@@ -52,7 +55,7 @@ export const GameGrid = styled.div`
     height: calc(100vh - 50px);
     gap: 0;
     grid-template-areas:
-      "clock clock timer timer"
+      "clock timer timer timer"
       "leftBar leftBar leftBar leftBar"
       "leftBar leftBar leftBar leftBar"
       "attempts attempts attempts attempts"

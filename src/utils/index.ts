@@ -33,7 +33,7 @@ export const convertMinutesToSeconds = (minutes: number) => {
 };
 
 export const addLetters = (wordLetters: string[]) => {
-  var lettersLeft = 30 - wordLetters.length;
+  var lettersLeft = 25 - wordLetters.length;
   var newLetters: string[] = [];
 
   for (let i = 0; i < lettersLeft; i++) {

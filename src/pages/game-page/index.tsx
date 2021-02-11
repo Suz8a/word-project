@@ -168,7 +168,7 @@ function GamePage() {
         }
         timer={
           <Info
-            infoTitle="Time left:"
+            infoTitle=""
             titleColor={colorPalette.primary}
             info={`${timer} seconds`}
             infoColor={colorPalette.secondary}

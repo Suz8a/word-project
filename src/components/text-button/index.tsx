@@ -11,6 +11,7 @@ type TextButtonProps = {
   textColor?: string;
   disabled?: boolean;
   fontSize?: string;
+  borderRadius?: string;
   onClick: () => void;
 };
 
@@ -22,16 +23,23 @@ function TextButton({
   textColor,
   fontSize,
   disabled,
+  borderRadius,
   onClick,
 }: TextButtonProps) {
   return (
-    <StyledCard width={width} height={height} padding="0px" borderRadius="10px">
+    <StyledCard
+      width={width}
+      height={height}
+      padding="0px"
+      borderRadius={borderRadius}
+    >
       <Button
         disabled={disabled}
         backgroundColor={backgroundColor}
         width={"100%"}
         height={"100%"}
         flexDirection="column"
+        borderRadius={borderRadius}
         onClick={onClick}
       >
         <Text

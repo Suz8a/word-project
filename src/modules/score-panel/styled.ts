@@ -5,5 +5,6 @@ export const StyledCard = styled(Card)`
   @media (max-width: 900px) {
     border: none;
     box-shadow: none;
+    padding: 0;
   }
 `;
