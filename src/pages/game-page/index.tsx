@@ -28,6 +28,7 @@ import { getAllIndex } from "../../utils";
 import loadingAnimation from "../../assets/7773-loading.json";
 import Lottie from "lottie-react";
 import SimpleContainer from "../../components/simple-container";
+import Text from "../../elements/text";
 
 function GamePage() {
   const dispatch = useDispatch();
@@ -99,7 +100,23 @@ function GamePage() {
         <Lottie animationData={loadingAnimation} />
       </SimpleContainer>
     );
-  if (attemps === 0 || timer < 0) return <div>Game over</div>;
+  if (attemps === 0 || timer < 0)
+    return (
+      <SimpleContainer width="100%" height="100vh">
+        <Text
+          text="Game Over"
+          color={colorPalette.primary}
+          fontWeight="bold"
+          fontSize="80px"
+        />
+        <Text
+          text="(Reload page to play again)"
+          color={colorPalette.secondary}
+          fontWeight="bold"
+          fontSize="30px"
+        />
+      </SimpleContainer>
+    );
 
   return (
     <>
