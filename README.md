@@ -43,3 +43,5 @@ se hizo uso de:
 - React icons
 - Styled components
 
+Api utilizada: [Random Words with Pronunciation](https://rapidapi.com/mcnaveen/api/random-words-with-pronunciation)
+
