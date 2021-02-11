@@ -7,4 +7,7 @@ export const StyledCard = styled(Card)`
     width: 30px;
     border-radius: 5px;
   }
+  @media (min-width: 900px) {
+    border-radius: 10px;
+  }
 `;
