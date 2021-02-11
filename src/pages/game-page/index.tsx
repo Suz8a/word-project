@@ -25,6 +25,9 @@ import {
 } from "../../store/actions";
 import { GameState } from "../../store/reducers";
 import { getAllIndex } from "../../utils";
+import loadingAnimation from "../../assets/7773-loading.json";
+import Lottie from "lottie-react";
+import SimpleContainer from "../../components/simple-container";
 
 function GamePage() {
   const dispatch = useDispatch();
@@ -90,7 +93,12 @@ function GamePage() {
       : dispatch(letterGuessedFailed(index));
   }
 
-  if (loading) return <div>loading...</div>;
+  if (loading)
+    return (
+      <SimpleContainer width="100%" height="100vh">
+        <Lottie animationData={loadingAnimation} />
+      </SimpleContainer>
+    );
   if (attemps === 0 || timer < 0) return <div>Game over</div>;
 
   return (
