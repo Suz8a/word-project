@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../elements/button";
-import Card from "../../elements/card";
 import Text from "../../elements/text";
+import { StyledCard } from "./styled";
 
 type TextButtonProps = {
   width: string;
@@ -25,7 +25,7 @@ function TextButton({
   onClick,
 }: TextButtonProps) {
   return (
-    <Card width={width} height={height} padding="0px" borderRadius="10px">
+    <StyledCard width={width} height={height} padding="0px" borderRadius="10px">
       <Button
         disabled={disabled}
         backgroundColor={backgroundColor}
@@ -41,7 +41,7 @@ function TextButton({
           color={textColor}
         />
       </Button>
-    </Card>
+    </StyledCard>
   );
 }
 

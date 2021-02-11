@@ -1,7 +1,7 @@
 import React from "react";
 import Panel from "../../components/panel";
-import Card from "../../elements/card";
 import { colorPalette } from "../../theme";
+import { StyledCard } from "./styled";
 
 type ScorePanelProps = {
   score: string;
@@ -19,7 +19,7 @@ function ScorePanel({
   contentSize,
 }: ScorePanelProps) {
   return (
-    <Card
+    <StyledCard
       width="100%"
       height="100%"
       flexDirection="column"
@@ -50,7 +50,7 @@ function ScorePanel({
         titleSize={titleSize}
         contentSize={contentSize}
       />
-    </Card>
+    </StyledCard>
   );
 }
 

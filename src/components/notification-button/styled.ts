@@ -15,7 +15,7 @@ export const StyledCircle = styled(Circle)<StyledCircleProps>`
 
 export const StyledCard = styled(Card)`
   @media (max-width: 900px) {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
   }
 `;

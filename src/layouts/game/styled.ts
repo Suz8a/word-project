@@ -9,6 +9,9 @@ export const Container = styled.div`
 export const TopBarContainer = styled.div`
   width: 100%;
   height: 80px;
+  @media (max-width: 900px) {
+    height: 50px;
+  }
 `;
 
 export const GameContainer = styled.div`
@@ -46,6 +49,8 @@ export const GameGrid = styled.div`
     "leftBar attempts attempts nextButton";
 
   @media (max-width: 900px) {
+    height: calc(100vh - 50px);
+    gap: 0;
     grid-template-areas:
       "clock clock timer timer"
       "leftBar leftBar leftBar leftBar"

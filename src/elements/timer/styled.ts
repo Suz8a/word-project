@@ -61,8 +61,8 @@ export const Container = styled.div<ContainerProps>`
     );
   }}
   @media (max-width: 900px) {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
   border: 5px solid black;
   overflow: hidden;
