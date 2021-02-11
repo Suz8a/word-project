@@ -49,7 +49,7 @@ function GamePage() {
     getWord().then(({ definition, word }) =>
       dispatch(initGame(word, definition))
     );
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     console.log(currentWordSplitted);
@@ -61,14 +61,14 @@ function GamePage() {
         dispatch(wordGuessed(300, !toggle, word, definition))
       );
     }
-  }, [currentWordSplitted, loading, toggle]);
+  }, [currentWordSplitted, loading, toggle, dispatch]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(reduceTimer());
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [dispatch]);
 
   function onClueClick() {
     dispatch(reduceClues());
