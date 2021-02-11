@@ -16,6 +16,8 @@ type GameProps = {
   word: ReactNode;
   keyboard: ReactNode;
   attemptsLeft: ReactNode;
+  loading: boolean;
+  loadingLottie: ReactNode;
 };
 
 function Game({
@@ -32,6 +34,8 @@ function Game({
   word,
   keyboard,
   attemptsLeft,
+  loading,
+  loadingLottie,
 }: GameProps) {
   return (
     <Container>
@@ -39,13 +43,20 @@ function Game({
       <GameContainer>
         <GameGrid>
           <GridItem gridArea="leftBar">{leftBar}</GridItem>
-          <GridItem gridArea="noteDescription">{noteDescription}</GridItem>
           <GridItem gridArea="clock">{clock}</GridItem>
           <GridItem gridArea="timer">{timer}</GridItem>
           <GridItem gridArea="clueButton">{clueButton}</GridItem>
           <GridItem gridArea="nextButton">{nextButton}</GridItem>
-          <GridItem gridArea="word">{word}</GridItem>
-          <GridItem gridArea="keyboard">{keyboard}</GridItem>
+          {loading === false && (
+            <GridItem gridArea="noteDescription">{noteDescription}</GridItem>
+          )}
+          {loading === false && <GridItem gridArea="word">{word}</GridItem>}
+          {loading === false && (
+            <GridItem gridArea="keyboard">{keyboard}</GridItem>
+          )}
+          {loading === true && (
+            <GridItem gridArea="word">{loadingLottie}</GridItem>
+          )}
           <GridItem gridArea="attempts">{attemptsLeft}</GridItem>
         </GameGrid>
       </GameContainer>

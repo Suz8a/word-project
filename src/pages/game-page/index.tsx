@@ -121,6 +121,12 @@ function GamePage() {
   return (
     <>
       <Game
+        loadingLottie={
+          <SimpleContainer width="100%" height="100%">
+            <Lottie animationData={loadingAnimation} />
+          </SimpleContainer>
+        }
+        loading={loading}
         topBar={
           <TopBar
             backgroundColor={colorPalette.primary}
