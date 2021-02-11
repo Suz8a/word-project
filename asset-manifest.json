@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/word-project/static/css/main.971c9feb.chunk.css",
-    "main.js": "/word-project/static/js/main.162946be.chunk.js",
-    "main.js.map": "/word-project/static/js/main.162946be.chunk.js.map",
-    "runtime-main.js": "/word-project/static/js/runtime-main.6ba2e335.js",
-    "runtime-main.js.map": "/word-project/static/js/runtime-main.6ba2e335.js.map",
-    "static/js/2.c6c72a89.chunk.js": "/word-project/static/js/2.c6c72a89.chunk.js",
-    "static/js/2.c6c72a89.chunk.js.map": "/word-project/static/js/2.c6c72a89.chunk.js.map",
-    "static/js/3.a132f10d.chunk.js": "/word-project/static/js/3.a132f10d.chunk.js",
-    "static/js/3.a132f10d.chunk.js.map": "/word-project/static/js/3.a132f10d.chunk.js.map",
+    "main.js": "/word-project/static/js/main.ca8942ea.chunk.js",
+    "main.js.map": "/word-project/static/js/main.ca8942ea.chunk.js.map",
+    "runtime-main.js": "/word-project/static/js/runtime-main.9d029cd7.js",
+    "runtime-main.js.map": "/word-project/static/js/runtime-main.9d029cd7.js.map",
+    "static/js/2.36844563.chunk.js": "/word-project/static/js/2.36844563.chunk.js",
+    "static/js/2.36844563.chunk.js.map": "/word-project/static/js/2.36844563.chunk.js.map",
+    "static/js/3.cc6398cf.chunk.js": "/word-project/static/js/3.cc6398cf.chunk.js",
+    "static/js/3.cc6398cf.chunk.js.map": "/word-project/static/js/3.cc6398cf.chunk.js.map",
     "index.html": "/word-project/index.html",
     "static/css/main.971c9feb.chunk.css.map": "/word-project/static/css/main.971c9feb.chunk.css.map",
-    "static/js/2.c6c72a89.chunk.js.LICENSE.txt": "/word-project/static/js/2.c6c72a89.chunk.js.LICENSE.txt"
+    "static/js/2.36844563.chunk.js.LICENSE.txt": "/word-project/static/js/2.36844563.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ba2e335.js",
-    "static/js/2.c6c72a89.chunk.js",
+    "static/js/runtime-main.9d029cd7.js",
+    "static/js/2.36844563.chunk.js",
     "static/css/main.971c9feb.chunk.css",
-    "static/js/main.162946be.chunk.js"
+    "static/js/main.ca8942ea.chunk.js"
   ]
 }
