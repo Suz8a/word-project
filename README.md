@@ -3,6 +3,8 @@
 
 - [Mock up en adobe XD](https://xd.adobe.com/view/0800f466-acad-4bb7-8251-606bb865f6ef-5d53/)
 
+Nota: Por cuestiones de prueba, las palabras a acompletar se imprimen en consola.
+
 ## Requerimientos
 > NodeJs
 
