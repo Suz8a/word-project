@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/word-project/static/css/main.971c9feb.chunk.css",
-    "main.js": "/word-project/static/js/main.f1591b10.chunk.js",
-    "main.js.map": "/word-project/static/js/main.f1591b10.chunk.js.map",
+    "main.js": "/word-project/static/js/main.20469d3f.chunk.js",
+    "main.js.map": "/word-project/static/js/main.20469d3f.chunk.js.map",
     "runtime-main.js": "/word-project/static/js/runtime-main.9d029cd7.js",
     "runtime-main.js.map": "/word-project/static/js/runtime-main.9d029cd7.js.map",
-    "static/js/2.36844563.chunk.js": "/word-project/static/js/2.36844563.chunk.js",
-    "static/js/2.36844563.chunk.js.map": "/word-project/static/js/2.36844563.chunk.js.map",
+    "static/js/2.31a4975e.chunk.js": "/word-project/static/js/2.31a4975e.chunk.js",
+    "static/js/2.31a4975e.chunk.js.map": "/word-project/static/js/2.31a4975e.chunk.js.map",
     "static/js/3.cc6398cf.chunk.js": "/word-project/static/js/3.cc6398cf.chunk.js",
     "static/js/3.cc6398cf.chunk.js.map": "/word-project/static/js/3.cc6398cf.chunk.js.map",
     "index.html": "/word-project/index.html",
     "static/css/main.971c9feb.chunk.css.map": "/word-project/static/css/main.971c9feb.chunk.css.map",
-    "static/js/2.36844563.chunk.js.LICENSE.txt": "/word-project/static/js/2.36844563.chunk.js.LICENSE.txt"
+    "static/js/2.31a4975e.chunk.js.LICENSE.txt": "/word-project/static/js/2.31a4975e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9d029cd7.js",
-    "static/js/2.36844563.chunk.js",
+    "static/js/2.31a4975e.chunk.js",
     "static/css/main.971c9feb.chunk.css",
-    "static/js/main.f1591b10.chunk.js"
+    "static/js/main.20469d3f.chunk.js"
   ]
 }
